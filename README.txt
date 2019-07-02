@@ -5,3 +5,5 @@ http://www.jaypan.com/tutorial/drupal-8-extending-core-configuration-extending-c
 https://drupalize.me/tutorial/define-new-form-controller-and-route?p=2766
 
 https://api.drupal.org/api/drupal/core%21includes%21bootstrap.inc/function/drupal_set_message/8.2.x
+https://www.drupal.org/docs/8/api/routing-system/parameters-in-routes/using-parameters-in-routes
+https://www.droptica.com/blog/drupal-8-restjson-integration-javascript-application
