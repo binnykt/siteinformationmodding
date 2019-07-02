@@ -12,23 +12,31 @@ class JsonconverterController extends ControllerBase {
    * {@inheritdoc}
    */
   public function delivernodejson($apikey, $nid) {
+    
+    if(!isset($nid) && !isset($apikey)) {
+       throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException();
+    }
 
-    $response = new JsonResponse();
-    $config = \Drupal::config('system.site');
-    $node = Node::load($nid);
-    $data = array(
-      'date' => $apikey,
-      'site_name' => $config->get('name'),
-      'site_email' => $config->get('mail'),
-      'random_node' => array(
-        'title' => $node->get('title')->getValue()[0]['value'],
-        'body' => $node->get('body')->getValue()[0]['value'],
-      )
-    );
+    // Getting the default api key stored in our form
+    $config = \Drupal::config('system.site'); 
+    $default_apikey = $config->get('siteapikey');
 
-    $response->setData($data);
+    if($apikey == $default_apikey) {
+	  $response = new JsonResponse();
+	  $node = Node::load($nid);
+	  $data = array(
+	    'node' => array(
+	    'title' => $node->get('title')->getValue()[0]['value'],
+	    'body' => $node->get('body')->getValue()[0]['value'],
+	   )
+	  );
 
-    return $response;
+	  $response->setData($data);
 
+      return $response;
+    }
+    else {
+      throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException();
+    }
   }
 }
