@@ -3,35 +3,4 @@
 /**
  * @file
  * 
- * Implements hooks
- *
- */
-
-use Drupal\Core\Form\FormStateInterface;
-
-
-/**
- * Implements hook_form_alter();
- */
-function siteinfo_modding_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-
-   if ($form_id == 'system_site_information_settings') {
-
-   /*	  $form['siteapikey'] = [
-       '#type' => 'details',
-       '#collapsible' => TRUE,
-       '#collapsed' => FALSE,
-       '#title' => t('Site API Key'),
-       '#weight' => -100,
-      ];
-      $form['siteapikey']['value'] = [
-       '#type' => 'textfield',
-       '#title' => t('Site API Key'),
-       '#default_value' => 'No API Key yet',
-      ];
-      $form['siteapikey']['submit'] = [
-       '#type' => 'submit',
-       '#value' => t('Save Configuration'),
-      ];*/
-   } 
-}
+*/
