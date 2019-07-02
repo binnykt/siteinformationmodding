@@ -1,0 +1,6 @@
+# 
+services:
+  siteinfo_modding.route_subscriber:
+    class: '\Drupal\siteinfo_modding\Routing\SiteInformationModRouteSubscriber'
+    tags:
+      - { name: event_subscriber }

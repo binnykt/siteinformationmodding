@@ -1,0 +1,8 @@
+# Schema for the configuration files of the Site Info Modding module.
+
+system.site:
+  mapping:
+    # The field name is 'siteapikey'
+    siteapikey:
+      type: string
+      label: 'Site API Key'

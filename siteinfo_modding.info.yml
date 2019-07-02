@@ -1,0 +1,4 @@
+name: "Site Info Modding"
+description: "Modifies the site information form"
+type: module
+core: 8.x
