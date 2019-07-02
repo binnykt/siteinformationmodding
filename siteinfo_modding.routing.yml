@@ -1,0 +1,7 @@
+siteinfo_modding.deliverjson:
+  path: '/page_json/{apikey}/{nid}'
+  defaults:
+    _controller: '\Drupal\siteinfo_modding\Controller\JsonconverterController::delivernodejson'
+    _title: "Deliver Node as Json"
+  requirements:
+    _permission: 'access content'  
