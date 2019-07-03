@@ -39,6 +39,9 @@ class SiteInformationModifiedForm extends SiteInformationForm {
       '#default_value' => isset($siteapikey_value) ? $siteapikey_value : "No API Key Yet",
       '#description' => $this->t('This the API Key of the site'),
     ];
+    
+    // Changing the default text of Submit button text
+    $form['actions']['submit']['#value'] =  isset($siteapikey_value) ? $this->t('Update my configuration') : $this->t('Save my configuration') ;
 
     return $form;
   }
@@ -53,7 +56,7 @@ class SiteInformationModifiedForm extends SiteInformationForm {
       ->save();
 
     // Trying to set a custom message with api key.
-    \Drupal::messenger()->addMessage(t('The Site API key  value has been saved with the value' . $form_state->getValue('siteapikey')), 'message');
+    \Drupal::messenger()->addMessage(t('The Site API key  value has been saved with the value ' . $form_state->getValue('siteapikey')), 'message');
 
     // Pass the remaining values off to the original form that we have extended,
     // so that they are also saved.
